@@ -43,12 +43,9 @@
             - name: Start containers
               run: docker-compose -f "docker-compose.yml" up -d --build
               
-            - name: Run Docker imagen
-              run: docker run --retry-connrefused http://localhost:8080/
-              
 
             - name: Run tests
-              run: sleep 10 && mvn test -Dgroups="regressivo"
+              run: sleep 20 && mvn test -Dgroups="regressivo"
 
             - name: Stop containers
               if: always()
