@@ -44,7 +44,7 @@
               run: docker-compose -f "docker-compose.yml" up -d --build
               
             - name: Run Docker imagen
-              run: docker run --network container:simulacao  --retry 10 --retry-connrefused http://localhost:8080/
+              run: docker run container:simulacao --retry-connrefused http://localhost:8080/
               
 
             - name: Run tests
