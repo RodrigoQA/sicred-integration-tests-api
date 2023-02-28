@@ -43,8 +43,8 @@
             - name: Start containers
               run: docker-compose -f "docker-compose.yml" up -d --build
               
-            - name: Visualizar o ipconfig
-              run: docker run --network container:simulacao appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
+            - name: Run Docker imagen
+              run: docker run --network container:simulacao rodrigolimaads/api-simulacao:1.0 -s --retry 10 --retry-connrefused http://localhost:8080/
               
 
             - name: Run tests
