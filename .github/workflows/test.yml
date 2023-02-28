@@ -43,6 +43,9 @@
             - name: Start containers
               run: docker-compose -f "docker-compose.yml" up -d --build
               
+            - name: Visualizar o ipconfig
+              run: ipconfig
+              
 
             - name: Run tests
               run: sleep 10 && mvn test -Dgroups="regressivo"
